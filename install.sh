@@ -1,7 +1,7 @@
 #!/bin/bash
-rm ~/.bash_profile
-rm ~/.vimrc
-rm ~/.tmux.conf
-ln -s dotfiles/.bashrc ~/
-ln -s dotfiles/.vimrc ~/
-ln -s dotfiles/.tmux.conf
+rm -rf ~/.bash_profile
+rm -rf ~/.vim
+rm -rf ~/.tmux.conf
+ln -s ~/dotfiles/.bash_profile ~/
+ln -s ~/dotfiles/.vim ~/
+ln -s ~.dotfiles/.tmux.conf ~/
