@@ -1,6 +1,6 @@
 " use dark theme
-set background=dark
-colorscheme solarized
+" set background=dark
+colorscheme badwolf
 let g:solarized_termtrans=1
 
 " use OS clipboard by default
@@ -12,5 +12,3 @@ set number
 " enable syntax highlighting
 syntax on
 
-" highlight current line
-set cursorline
