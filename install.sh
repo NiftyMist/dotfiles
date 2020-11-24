@@ -1,9 +1,11 @@
 #!/bin/bash
-rm -rf ~/.bash_profile
 rm -rf ~/.vim
 rm -rf ~/.tmux.conf
 rm -rf ~/.vimrc
-ln -s ~/git/dotfiles/.bash_profile ~/
-ln -s ~/git/dotfiles/.vim ~/
-ln -s ~/git/dotfiles/.tmux.conf ~/
-ln -s ~/git/dotfiles/.vimrc ~/
+rm -rf ~/.zshrc
+rm -rf ~/.p10k.zsh
+ln -s .vim ~/
+ln -s .tmux.conf ~/
+ln -s .vimrc ~/
+ln -s .zshrc ~/
+ln -s .p10k.zshrc ~/
