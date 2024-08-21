@@ -128,3 +128,7 @@ export TOWER_OAUTH_TOKEN="qoar8jpamJXHm08ic5hzHjrocbjbgJ"
 # molecule enable colors for tmux
 export PY_COLORS='1'
 export ANSIBLE_FORCE_COLOR='1'
+
+if [[ $OSTYPE == 'darwin'* ]]; then
+  source /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
