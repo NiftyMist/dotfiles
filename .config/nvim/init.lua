@@ -49,7 +49,12 @@ local plugins = {
 
 end
 },
-  { 'ThePrimeagen/vim-be-good', name = "vim-be-good" }
+  { 'ThePrimeagen/vim-be-good', name = "vim-be-good" },
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    opts = {},
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }
+}
 }
 local opts = {}
 
