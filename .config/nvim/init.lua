@@ -31,7 +31,7 @@ local plugins = {
   },
   { "pearofducks/ansible-vim", name = "ansible-vim" },
   { "f-person/git-blame.nvim", name = "git-blame.nvim" },
-  { "airblade/vim-gitgutter", name = "vim-gitgutter" },
+  { "lewis6991/gitsigns.nvim", name = "gitsigns.nvim" },
   { 'alexghergh/nvim-tmux-navigation', config = function()
 
     local nvim_tmux_nav = require('nvim-tmux-navigation')
@@ -60,6 +60,7 @@ local opts = {}
 
 require("lazy").setup(plugins, opts)
 require("catppuccin").setup()
+require("gitsigns").setup()
 
 -- set color scheme
 vim.cmd.colorscheme "catppuccin-macchiato"
