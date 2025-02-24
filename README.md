@@ -14,7 +14,8 @@ Clone into home dir.
   - `JetBrainMono NF` prefered
 - `stow`
 - for tokyonight tmux theme
-  - `brew install bash bc coreutils gawk gh glab gsed jq nowplaying-cli`
+  - on MacOS: `brew install bash bc coreutils gawk gh glab gsed jq nowplaying-cli`
+  - on Arch: `pacman -Sy bash bc coreutils git jq playerctl`
 
 # Using stow  
 
