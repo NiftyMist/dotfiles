@@ -56,3 +56,9 @@ export ANSIBLE_FORCE_COLOR='1'
 if [[ $OSTYPE == 'darwin'* ]]; then
   source /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
+
+# shortcuts
+alias plays="cd ~/git/ansible/plays"
+alias roles="cd ~/git/ansible/roles"
+alias inv="cd ~/git/ansible/inventories"
+

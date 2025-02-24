@@ -24,7 +24,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  {
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},
+  },
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
      dependencies = { 'nvim-lua/plenary.nvim' }
@@ -59,11 +64,10 @@ end
 local opts = {}
 
 require("lazy").setup(plugins, opts)
-require("catppuccin").setup()
 require("gitsigns").setup()
 
 -- set color scheme
-vim.cmd.colorscheme "catppuccin-macchiato"
+vim.cmd.colorscheme "tokyonight-night"
 
 -- relative line numbers enable
 vim.wo.relativenumber = true
