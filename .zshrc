@@ -41,9 +41,15 @@ export PY_COLORS='1'
 export ANSIBLE_FORCE_COLOR='1'
 
 # shortcuts
+# get to ansible dirs quickly
 alias plays="cd ~/git/ansible/plays"
 alias roles="cd ~/git/ansible/roles"
 alias inv="cd ~/git/ansible/inventories"
+# molecule shortcuts
+alias mc="molecule converge"
+alias mp="molecule prepare --force"
+alias md="molecule destroy"
+alias mlv="molecule verify"
 
 # oh-my-posh
 # ignore default apple terminal
