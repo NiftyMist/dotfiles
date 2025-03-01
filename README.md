@@ -9,6 +9,8 @@ Clone into home dir.
 # Requirements
 
 - `zsh`
+  - `zsh-autosuggestions`
+  - `zsh-syntax-highlighting`
 - `ohmyzsh`
 - powerline fonts or nerd fonts
   - `JetBrainMono NF` prefered
