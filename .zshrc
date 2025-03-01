@@ -13,6 +13,7 @@ plugins=(
 )
 if [[ $OSTYPE == 'darwin'* ]]; then
   source /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 # export path for neovim intsalled from release package
