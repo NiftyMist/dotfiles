@@ -34,7 +34,6 @@ local plugins = {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
      dependencies = { 'nvim-lua/plenary.nvim' }
   },
-  { "pearofducks/ansible-vim", name = "ansible-vim" },
   { "f-person/git-blame.nvim", name = "git-blame.nvim" },
   { "lewis6991/gitsigns.nvim", name = "gitsigns.nvim" },
   { 'alexghergh/nvim-tmux-navigation', config = function()
@@ -54,12 +53,7 @@ local plugins = {
 
 end
 },
-  { 'ThePrimeagen/vim-be-good', name = "vim-be-good" },
-  {
-    'MeanderingProgrammer/render-markdown.nvim',
-    opts = {},
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }
-}
+  { 'ThePrimeagen/vim-be-good', name = "vim-be-good" }
 }
 local opts = {}
 
