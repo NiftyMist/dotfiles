@@ -23,6 +23,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Plugins
 local plugins = {
   {
   "folke/tokyonight.nvim",
@@ -51,9 +52,8 @@ local plugins = {
     vim.keymap.set('n', "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
     vim.keymap.set('n', "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
 
-end
-},
-  { 'ThePrimeagen/vim-be-good', name = "vim-be-good" }
+    end
+  }
 }
 local opts = {}
 
