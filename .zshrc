@@ -59,3 +59,10 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
 fi
 
 eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyonight_storm.omp.json)"
+
+# activate virtual environment
+if [ ! -f ~/venvs/latest/bin/activate ]; then
+  echo "No venv found"
+else
+  source ~/venvs/latest/bin/activate
+fi
