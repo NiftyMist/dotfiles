@@ -23,6 +23,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Plugins
 local plugins = {
   {
   "folke/tokyonight.nvim",
@@ -34,7 +35,7 @@ local plugins = {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
      dependencies = { 'nvim-lua/plenary.nvim' }
   },
-  { "pearofducks/ansible-vim", name = "ansible-vim" },
+  {"nvim-treesitter/nvim-treesitter", build= ":TSUpdate"},
   { "f-person/git-blame.nvim", name = "git-blame.nvim" },
   { "lewis6991/gitsigns.nvim", name = "gitsigns.nvim" },
   { 'alexghergh/nvim-tmux-navigation', config = function()
@@ -52,16 +53,15 @@ local plugins = {
     vim.keymap.set('n', "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
     vim.keymap.set('n', "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
 
-end
-},
-  { 'ThePrimeagen/vim-be-good', name = "vim-be-good" },
-  {
-    'MeanderingProgrammer/render-markdown.nvim',
-    opts = {},
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }
+    end
+  },
+  { "mfussenegger/nvim-ansible", name = "nvim-ansible" },
+  { "williamboman/mason.nvim" },
+  { "pearofducks/ansible-vim", name = "ansible-vim" }
 }
+local opts = {
+  ensure_installed = { "ansible-lint", "markdownlint-cli2", "markdown-toc" }
 }
-local opts = {}
 
 require("lazy").setup(plugins, opts)
 require("gitsigns").setup()
@@ -73,8 +73,15 @@ vim.cmd.colorscheme "tokyonight-night"
 vim.wo.relativenumber = true
 vim.wo.number = true
 
--- use telescope
+-- telescope config
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
+-- treesitter config
+local config = require("nvim-treesitter.configs")
+config.setup({
+  ensure_installed = {"lua", "bash", "python", "yaml", "hcl", "jinja", "nginx", "tmux", "markdown"},
+  highlight = { enable = true },
+  indent = { enable = true }
+})

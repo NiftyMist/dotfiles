@@ -13,6 +13,7 @@ plugins=(
 )
 if [[ $OSTYPE == 'darwin'* ]]; then
   source /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 # export path for neovim intsalled from release package
@@ -41,9 +42,15 @@ export PY_COLORS='1'
 export ANSIBLE_FORCE_COLOR='1'
 
 # shortcuts
+# get to ansible dirs quickly
 alias plays="cd ~/git/ansible/plays"
 alias roles="cd ~/git/ansible/roles"
 alias inv="cd ~/git/ansible/inventories"
+# molecule shortcuts
+alias mc="molecule converge"
+alias mp="molecule prepare --force"
+alias md="molecule destroy"
+alias mlv="molecule verify"
 
 # oh-my-posh
 # ignore default apple terminal
@@ -52,3 +59,10 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
 fi
 
 eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyonight_storm.omp.json)"
+
+# activate virtual environment
+if [ ! -f ~/venvs/latest/bin/activate ]; then
+  echo "No venv found"
+else
+  source ~/venvs/latest/bin/activate
+fi
