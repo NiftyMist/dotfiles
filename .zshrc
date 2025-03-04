@@ -16,12 +16,6 @@ if [[ $OSTYPE == 'darwin'* ]]; then
   source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
-# export path for neovim intsalled from release package
-# https://github.com/neovim/neovim/releases
-# Current is 0.9.5
-export PATH="$PATH:/opt/nvim-linux64/bin"
-alias vim="nvim"
-
 # awx-kit setup
 HOSTNAME=`hostname`
 if [ "$HOSTNAME" = Dylans-Mac-mini ]; then
@@ -42,6 +36,7 @@ export PY_COLORS='1'
 export ANSIBLE_FORCE_COLOR='1'
 
 # shortcuts
+alias vim="nvim"
 # get to ansible dirs quickly
 alias plays="cd ~/git/ansible/plays"
 alias roles="cd ~/git/ansible/roles"
@@ -57,11 +52,10 @@ alias mlv="molecule verify"
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh)"
 fi
-
 eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyonight_storm.omp.json)"
 
 # activate virtual environment
-if [ ! -f ~/venvs/latest/bin/activate ]; then
+if [ ! -d ~/venvs/latest ]; then
   echo "No venv found"
 else
   source ~/venvs/latest/bin/activate
