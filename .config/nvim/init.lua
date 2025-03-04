@@ -3,7 +3,6 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.bo.softtabstop = 2
--- vim.opt.guifont = { "FiraCode NF", "h25" }
 vim.opt.cursorline = true
 
 -- Bootstrap lazy.nvim
