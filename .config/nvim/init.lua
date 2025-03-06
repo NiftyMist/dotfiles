@@ -56,7 +56,11 @@ local plugins = {
   },
   { "mfussenegger/nvim-ansible", name = "nvim-ansible" },
   { "williamboman/mason.nvim" },
-  { "pearofducks/ansible-vim", name = "ansible-vim" }
+  { "pearofducks/ansible-vim", name = "ansible-vim" },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
+  }
 }
 local opts = {
   ensure_installed = { "ansible-lint", "markdownlint-cli2", "markdown-toc" }
@@ -64,6 +68,11 @@ local opts = {
 
 require("lazy").setup(plugins, opts)
 require("gitsigns").setup()
+require('lualine').setup {
+  options = { 
+    theme  = 'iceberg_dark'
+  }
+}
 
 -- set color scheme
 vim.cmd.colorscheme "tokyonight-night"
