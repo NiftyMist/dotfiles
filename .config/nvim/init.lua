@@ -34,11 +34,3 @@ vim.cmd.colorscheme "tokyonight-night"
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-
--- treesitter config
-local config = require("nvim-treesitter.configs")
-config.setup({
-  ensure_installed = {"lua", "bash", "python", "yaml", "hcl", "jinja", "nginx", "tmux", "markdown"},
-  highlight = { enable = true },
-  indent = { enable = true }
-})
