@@ -46,6 +46,10 @@ alias mc="molecule converge"
 alias mp="molecule prepare --force"
 alias md="molecule destroy"
 alias mlv="molecule verify"
+# fzf
+# Set up fzf key bindings and fuzzy completion
+# source <(fzf --zsh)
+# alias search="fzf --tmux 80% --preview 'bat --color=always {}'" 
 
 # oh-my-posh
 # ignore default apple terminal
