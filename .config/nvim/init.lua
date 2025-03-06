@@ -1,10 +1,3 @@
-vim.g.mapleader = " "
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.bo.softtabstop = 2
-vim.opt.cursorline = true
-
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -22,64 +15,20 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Plugins
-local plugins = {
-  {
-  "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
-  opts = {},
-  },
-  {
-    'nvim-telescope/telescope.nvim', tag = '0.1.8',
-     dependencies = { 'nvim-lua/plenary.nvim' }
-  },
-  {"nvim-treesitter/nvim-treesitter", build= ":TSUpdate"},
-  { "f-person/git-blame.nvim", name = "git-blame.nvim" },
-  { "lewis6991/gitsigns.nvim", name = "gitsigns.nvim" },
-  { 'alexghergh/nvim-tmux-navigation', config = function()
-
-    local nvim_tmux_nav = require('nvim-tmux-navigation')
-
-    nvim_tmux_nav.setup {
-        disable_when_zoomed = true -- defaults to false
-    }
-
-    vim.keymap.set('n', "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
-    vim.keymap.set('n', "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
-    vim.keymap.set('n', "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
-    vim.keymap.set('n', "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
-    vim.keymap.set('n', "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
-    vim.keymap.set('n', "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
-
-    end
-  },
-  { "mfussenegger/nvim-ansible", name = "nvim-ansible" },
-  { "williamboman/mason.nvim" },
-  { "pearofducks/ansible-vim", name = "ansible-vim" },
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' }
-  }
-}
 local opts = {
   ensure_installed = { "ansible-lint", "markdownlint-cli2", "markdown-toc" }
 }
 
-require("lazy").setup(plugins, opts)
+require("vim-options")
+require("lazy").setup("plugins", opts)
 require("gitsigns").setup()
 require('lualine').setup {
   options = { 
     theme  = 'horizon'
   }
 }
-
 -- set color scheme
 vim.cmd.colorscheme "tokyonight-night"
-
--- relative line numbers enable
-vim.wo.relativenumber = true
-vim.wo.number = true
 
 -- telescope config
 local builtin = require('telescope.builtin')
