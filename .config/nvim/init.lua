@@ -70,7 +70,7 @@ require("lazy").setup(plugins, opts)
 require("gitsigns").setup()
 require('lualine').setup {
   options = { 
-    theme  = 'iceberg_dark'
+    theme  = 'horizon'
   }
 }
 
