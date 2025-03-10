@@ -24,11 +24,14 @@ require("lazy").setup("plugins", opts)
 require("gitsigns").setup()
 require('lualine').setup {
   options = { 
-    theme  = 'horizon'
+    theme  = 'gruvbox_dark'
   }
 }
 -- set color scheme
-vim.cmd.colorscheme "tokyonight-night"
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
+-- vim.cmd.colorscheme "gruvbox"
+-- vim.cmd
 
 -- telescope config
 local builtin = require('telescope.builtin')
