@@ -56,7 +56,7 @@ alias mlv="molecule verify"
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh)"
 fi
-eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyonight_storm.omp.json)"
+eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/gruvbox.omp.json)"
 
 # activate virtual environment
 if [ ! -d ~/venvs/latest ]; then
