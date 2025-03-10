@@ -45,6 +45,7 @@ alias inv="cd ~/git/ansible/inventories"
 alias mc="molecule converge"
 alias mp="molecule prepare --force"
 alias md="molecule destroy"
+alias ml="molecule login"
 alias mlv="molecule verify"
 # fzf
 # Set up fzf key bindings and fuzzy completion
