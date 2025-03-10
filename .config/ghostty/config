@@ -1,6 +1,6 @@
-theme = tokyonight
+theme = GruvBoxDark
 font-family = "JetBrainsMonoNL Nerd Font"
-font-size = 20
+font-size = 17
 
 window-height=30
 window-width=110
