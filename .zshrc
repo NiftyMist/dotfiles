@@ -24,11 +24,19 @@ else
   AWX='awx.rinet.io'
 fi
 export TOWER_HOST=https://$AWX
+
 if [ ! -f ~/.awx_oauth_token ]; then
   echo "No awx oauth_token found"
   echo "Please add awx oauth_token to $HOME/.awx_oauth_token"
 else
   export TOWER_OAUTH_TOKEN=$(cat $HOME/.awx_oauth_token)
+fi
+
+if [ ! -f ~/.gitlab_access_token ]; then
+  echo "No gitlab access token found"
+  echo "Please add gitlab access token to $HOME/.gitlab_access_token"
+else
+  export GITLAB_ACCESS_TOKEN=$(cat $HOME/.gitlab_access_token)
 fi
 
 # molecule enable colors for tmux
