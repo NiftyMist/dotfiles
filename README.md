@@ -11,7 +11,6 @@ Clone into home directory.
 - `zsh`
   - `zsh-autosuggestions`
   - `zsh-syntax-highlighting`
-- `oh-my-posh`
 - powerline fonts or nerd fonts
   - `JetBrainsMonoNL Nerd Font` prefered
 - `stow`
@@ -25,12 +24,14 @@ Clone into home directory.
   - sshpass
   - stow
   - tmux
+  - starship
 
 # My settings
 - themes:
-  - ghostty: GruvBoxDark
+  - ghostty: Gruvbox Dark Hard
   - nvim: ellisonleao/gruvbox.nvim
   - tmux: egel/tmux-gruvbox
+  - starship: gruvbox-rainbow 
 - nvim plugins:
   - ansible-vim
   - gitblame
