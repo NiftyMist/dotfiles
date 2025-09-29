@@ -62,10 +62,10 @@ alias mlv="molecule verify"
 
 # oh-my-posh
 # ignore default apple terminal
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh)"
-fi
-eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/gruvbox.omp.json)"
+#if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+#  eval "$(oh-my-posh init zsh)"
+#fi
+#eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/gruvbox.omp.json)"
 
 # activate virtual environment
 if [ ! -d ~/venvs/latest ]; then
@@ -73,3 +73,5 @@ if [ ! -d ~/venvs/latest ]; then
 else
   source ~/venvs/latest/bin/activate
 fi
+
+eval "$(starship init zsh)"
