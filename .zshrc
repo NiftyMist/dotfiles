@@ -46,26 +46,65 @@ export ANSIBLE_FORCE_COLOR='1'
 # shortcuts
 alias vim="nvim"
 # get to ansible dirs quickly
-alias plays="cd ~/git/ansible/plays"
-alias roles="cd ~/git/ansible/roles"
-alias inv="cd ~/git/ansible/inventories"
+# Replace your alias with this function
+# Enable completion system 
+autoload -Uz compinit
+compinit
+
+roles() {
+  local base_dir=~/git/ansible/roles
+  if [[ -z "$1" ]]; then
+    cd "$base_dir" || return
+  else
+    cd "$base_dir/$1" || echo "Role '$1' not found in $base_dir"
+  fi
+}
+
+# Completion for roles()
+_roles() {
+  local base_dir=~/git/ansible/roles
+  _files -W "$base_dir" -/
+}
+compdef _roles roles
+
+plays() {
+  local base_dir=~/git/ansible/plays
+  if [[ -z "$1" ]]; then
+    cd "$base_dir" || return
+  else
+    cd "$base_dir/$1" || echo "Play '$1' not found in $base_dir"
+  fi
+}
+
+# Completion for plays()
+_plays() {
+  local base_dir=~/git/ansible/plays
+  _files -W "$base_dir" -/
+}
+compdef _plays plays
+
+inv() {
+  local base_dir=~/git/ansible/inventories
+  if [[ -z "$1" ]]; then
+    cd "$base_dir" || return
+  else
+    cd "$base_dir/$1" || echo "Inventory '$1' not found in $base_dir"
+  fi
+}
+
+# Completion for inv()
+_inv() {
+  local base_dir=~/git/ansible/inventories
+  _files -W "$base_dir" -/
+}
+compdef _inv inv
+
 # molecule shortcuts
 alias mc="molecule converge"
 alias mp="molecule prepare --force"
 alias md="molecule destroy"
 alias ml="molecule login"
 alias mlv="molecule verify"
-# fzf
-# Set up fzf key bindings and fuzzy completion
-# source <(fzf --zsh)
-# alias search="fzf --tmux 80% --preview 'bat --color=always {}'" 
-
-# oh-my-posh
-# ignore default apple terminal
-#if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-#  eval "$(oh-my-posh init zsh)"
-#fi
-#eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/gruvbox.omp.json)"
 
 # activate virtual environment
 if [ ! -d ~/venvs/latest ]; then
