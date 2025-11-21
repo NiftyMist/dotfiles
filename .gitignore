@@ -2,3 +2,4 @@
 .config/nvim/lazy-lock.json
 .config/nvim/spell/
 .config/packer
+.config/yazi/flavors/
