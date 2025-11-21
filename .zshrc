@@ -114,3 +114,6 @@ else
 fi
 
 eval "$(starship init zsh)"
+
+# set editor to yazi opens fils in neovim
+export EDITOR=nvim
