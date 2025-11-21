@@ -25,6 +25,18 @@ Clone into home directory.
   - stow
   - tmux
   - starship
+  - yazi 
+  - ffmpeg 
+  - sevenzip 
+  - jq 
+  - poppler 
+  - fd 
+  - ripgrep 
+  - fzf 
+  - zoxide 
+  - resvg 
+  - imagemagick 
+  - font-symbols-only-nerd-font
 
 # My settings
 - themes:
@@ -32,6 +44,7 @@ Clone into home directory.
   - nvim: ellisonleao/gruvbox.nvim
   - tmux: egel/tmux-gruvbox
   - starship: gruvbox-rainbow 
+  - yazi: grubvox-dark `ya pack -a bennyyip/gruvbox-dark`
 - nvim plugins:
   - ansible-vim
   - gitblame
