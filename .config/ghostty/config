@@ -2,7 +2,7 @@ theme = Gruvbox Dark Hard
 font-family = "JetBrainsMonoNL Nerd Font"
 font-size = 17
 
-window-height=30
+window-height=200
 window-width=110
 
 keybind = super+k=text:\x0c
