@@ -117,3 +117,9 @@ eval "$(starship init zsh)"
 
 # set editor to yazi opens fils in neovim
 export EDITOR=nvim
+
+# bat theme
+export BAT_THEME=gruvbox-dark
+
+# gitlab commit signing
+export GPG_TTY=$(tty)
