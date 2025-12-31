@@ -23,13 +23,14 @@ require("vim-options")
 require("lazy").setup("plugins", opts)
 require("gitsigns").setup()
 require('lualine').setup {
-  options = { 
-    theme  = 'gruvbox_dark'
-  }
+    options = {
+        theme = "catppuccin"
+        -- ... the rest of your lualine config
+    }
 }
 -- set color scheme
-vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+-- vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme catppuccin]])
 -- vim.cmd.colorscheme "gruvbox"
 -- vim.cmd
 

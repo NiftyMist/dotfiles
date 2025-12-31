@@ -1,8 +1,8 @@
 return {
-  {
-    "ellisonleao/gruvbox.nvim",
-    config = true,
-    priority = 1000,
-    opts = {},
-    }
+  { 
+    "catppuccin/nvim", 
+    name = "catppuccin", 
+    flavour = "macchiato",
+    priority = 1000 
+  }
 }
