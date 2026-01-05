@@ -1,6 +1,8 @@
 theme = Catppuccin Frappe
-font-family = "FiraMono Nerd Font Mono Regular"
+font-family = "Hack Nerd Font Propo"
 font-size = 17
+
+background-opacity = 0.99
 
 window-height=200
 window-width=110
