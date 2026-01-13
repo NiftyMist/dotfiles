@@ -119,7 +119,8 @@ eval "$(starship init zsh)"
 export EDITOR=nvim
 
 # bat theme
-export BAT_THEME=gruvbox-dark
+export BAT_THEME="Catppuccin Macchiato"
+alias cat="bat"
 
 # gitlab commit signing
 export GPG_TTY=$(tty)
