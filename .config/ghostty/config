@@ -7,4 +7,4 @@ background-opacity = 0.99
 window-height=200
 window-width=110
 
-keybind = super+k=text:\x0c
+keybind = "super+k=text:\x0c"
