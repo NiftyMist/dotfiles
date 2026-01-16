@@ -113,8 +113,6 @@ else
   source ~/venvs/latest/bin/activate
 fi
 
-eval "$(starship init zsh)"
-
 # set editor to yazi opens fils in neovim
 export EDITOR=nvim
 
@@ -124,3 +122,6 @@ alias cat="bat"
 
 # gitlab commit signing
 export GPG_TTY=$(tty)
+
+eval "$(starship init zsh)"
+
