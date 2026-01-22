@@ -1,0 +1,14 @@
+# /Users/dmitchell/.config/tmuxinator/warlow.yml
+
+name: rinet-test
+root: ~/dotfiles
+
+windows:
+  - editor:
+      layout: even-horizontal
+      panes:
+        - dotfiles:
+          - vim
+        - terminal:
+          - cd ~/
+          - clear

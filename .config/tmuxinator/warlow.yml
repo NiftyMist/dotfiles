@@ -1,0 +1,32 @@
+# /Users/dmitchell/.config/tmuxinator/warlow.yml
+
+name: warlow
+root: ~/git/ansible/plays/warlow
+
+windows:
+  - editor:
+      layout: even-vertical
+      panes:
+        - editor:
+          - vim
+        - claude:
+          - claude
+  - vagrant:
+      layout: tiled
+      panes:
+        - vagrant:
+          - vagrant ssh
+          - cd warlow
+          - clear
+        - vagrant:
+          - vagrant ssh
+          - cd warlow
+          - clear
+        - vagrant:
+          - vagrant ssh
+          - cd warlow
+          - clear
+        - vagrant:
+          - vagrant ssh
+          - cd warlow
+          - clear
