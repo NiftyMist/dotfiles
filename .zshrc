@@ -39,13 +39,6 @@ else
   export GITLAB_ACCESS_TOKEN=$(cat $HOME/.gitlab_access_token)
 fi
 
-if [ ! -f ~/.anthropic_api_key ]; then
-  echo "No anthropic api key found"
-  echo "Please add anthropic api key to $HOME/.anthropic_api_key"
-else
-  export ANTHROPIC_API_KEY=$(cat $HOME/.anthropic_api_key)
-fi
-
 # molecule enable colors for tmux
 export PY_COLORS='1'
 export ANSIBLE_FORCE_COLOR='1'
