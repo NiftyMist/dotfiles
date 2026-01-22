@@ -4,3 +4,5 @@
 .config/packer
 .config/yazi/flavors/
 .config/wireshark
+.config/tmux/plugins/catppuccin
+
