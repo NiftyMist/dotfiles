@@ -4,6 +4,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.bo.softtabstop = 2
 vim.opt.cursorline = true
+vim.opt.clipboard = "unnamedplus"
 
 -- relative line numbers enable
 vim.wo.relativenumber = true
