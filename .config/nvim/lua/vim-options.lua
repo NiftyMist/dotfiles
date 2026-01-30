@@ -19,3 +19,28 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 -- split buffers easier
 vim.keymap.set('n', '<leader>w', ':vsplit<CR>')
 vim.keymap.set('n', '<leader>ww', ':sp<CR>')
+
+-- gitsigns
+vim.keymap.set('n', '<leader>gb', '::Gitsigns toggle_current_line_blame<CR>')
+vim.keymap.set('n', '<leader>gp', ':Gitsigns preview_hunk_inline<CR>')
+
+-- Custom filetype associations
+-- Example:
+--   vim.filetype.add({
+--     extension = {
+--       tfvars = "terraform",
+--       hcl = "terraform",
+--     },
+--     filename = {
+--       ["Jenkinsfile"] = "groovy",
+--       [".env.local"] = "sh",
+--     },
+--     pattern = {
+--       [".*%.conf%.d/.*"] = "conf",
+--     },
+--   })
+vim.filetype.add({
+  extension = {
+    tfvars = "terraform",
+  },
+})
