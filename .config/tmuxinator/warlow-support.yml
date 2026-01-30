@@ -1,0 +1,8 @@
+# /Users/dmitchell/.config/tmuxinator/warlow.yml
+
+name: warlow-support
+root: ~/
+
+windows:
+  - support: ssh warlow-support
+
