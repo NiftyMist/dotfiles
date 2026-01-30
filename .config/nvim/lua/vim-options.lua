@@ -44,3 +44,7 @@ vim.filetype.add({
     tfvars = "terraform",
   },
 })
+
+-- fugitive-gitlab
+vim.g.fugitive_gitlab_domains = { 'https://git.rinet.io' }
+
