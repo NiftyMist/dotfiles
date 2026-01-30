@@ -1,6 +1,6 @@
 # /Users/dmitchell/.config/tmuxinator/warlow.yml
 
-name: rinet-test
+name: rinet
 root: ~/dotfiles
 
 windows:

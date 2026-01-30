@@ -9,8 +9,6 @@ windows:
       panes:
         - editor:
           - vim
-        - claude:
-          - claude
   - vagrant:
       layout: tiled
       panes:
