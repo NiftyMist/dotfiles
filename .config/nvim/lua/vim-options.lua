@@ -24,6 +24,14 @@ vim.keymap.set('n', '<leader>ww', ':sp<CR>')
 vim.keymap.set('n', '<leader>gb', '::Gitsigns toggle_current_line_blame<CR>')
 vim.keymap.set('n', '<leader>gp', ':Gitsigns preview_hunk_inline<CR>')
 
+-- fugitive
+-- shortcut to open git status
+vim.keymap.set('n', '<leader>g', ':G<CR>')
+-- shortcut to do GitBrowse command
+vim.keymap.set('n', '<leader>b', ':GBrowse<CR>')
+-- shortcut to open commit buffer
+vim.keymap.set('n', '<leader>gg', ':G commit<CR>')
+
 -- Custom filetype associations
 -- Example:
 --   vim.filetype.add({
@@ -47,4 +55,7 @@ vim.filetype.add({
 
 -- fugitive-gitlab
 vim.g.fugitive_gitlab_domains = { 'https://git.rinet.io' }
+
+--vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+--vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
