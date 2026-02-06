@@ -36,5 +36,6 @@ vim.cmd([[colorscheme catppuccin]])
 
 -- telescope config
 local builtin = require('telescope.builtin')
+-- telescope
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
