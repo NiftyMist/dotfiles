@@ -25,7 +25,7 @@ vim.keymap.set('n', '<leader>gb', '::Gitsigns toggle_current_line_blame<CR>')
 vim.keymap.set('n', '<leader>gp', ':Gitsigns preview_hunk_inline<CR>')
 
 -- fugitive
--- shortcut to open git status
+-- shortcut to open git status buffer
 vim.keymap.set('n', '<leader>g', ':G<CR>')
 -- shortcut to do GitBrowse command
 vim.keymap.set('n', '<leader>b', ':GBrowse<CR>')
