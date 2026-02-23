@@ -80,5 +80,5 @@ export GPG_TTY=$(tty)
 
 eval "$(starship init zsh)"
 
-# include my bash library
+# include my bash libraries
 source ~/dotfiles/lib/functions.sh
