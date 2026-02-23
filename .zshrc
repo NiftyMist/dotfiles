@@ -15,10 +15,6 @@ plugins=(
     zsh-kubectl-prompt
 )
 
-if [[ $OSTYPE == 'darwin'* ]]; then
-  source /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-
 # awx-kit setup
 HOSTNAME=`hostname`
 if [ "$HOSTNAME" = Dylans-Mac-mini ]; then
