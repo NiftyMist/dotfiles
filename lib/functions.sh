@@ -1,3 +1,8 @@
+# bash library — must be sourced
+(return 0 2>/dev/null) || {
+  echo "ERROR: This file must be sourced, not executed"
+  exit 1
+}
 
 roles() {
   local base_dir=~/git/ansible/roles
