@@ -47,3 +47,10 @@ _inv() {
 }
 compdef _inv inv
 
+daily_note() {
+  DATE=`date +"%Y-%m-%d"`
+  OBSIDIAN="$HOME/obsidian/journal"
+  DAILY_NOTE="work-notes/$DATE.md"
+  cd $OBSIDIAN
+  nvim $DAILY_NOTE
+}
