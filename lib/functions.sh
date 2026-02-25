@@ -59,3 +59,10 @@ daily_note() {
   cd $OBSIDIAN
   nvim $DAILY_NOTE
 }
+
+todo() {
+  OBSIDIAN="$HOME/obsidian/journal"
+  TODO_NOTE="TODO.md"
+  cd $OBSIDIAN
+  nvim $TODO_NOTE
+}
