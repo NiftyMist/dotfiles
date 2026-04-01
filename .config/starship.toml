@@ -24,7 +24,7 @@ $conda\
 [](fg:sapphire bg:lavender)\
 $time\
 [ ](fg:lavender)\
-$cmd_duration\
+$kubernetes\
 $line_break\
 $character"""
 
@@ -164,9 +164,13 @@ vimcmd_visual_symbol = '[❮](bold fg:yellow)'
 show_milliseconds = true
 format = " in $duration "
 style = "bg:lavender"
-disabled = false
+disabled = true
 show_notifications = true
 min_time_to_notify = 45000
+
+[kubernetes]
+disabled = false
+format = '[$symbol$context( \($namespace\))]($style) '
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"

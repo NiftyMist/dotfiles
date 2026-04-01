@@ -21,6 +21,7 @@ if [ "$HOSTNAME" = Dylans-Mac-mini ]; then
   AWX='awx.mitchell.house'
 else
   AWX='awx.rinet.io'
+  source $HOME/ri-env-vars
 fi
 export TOWER_HOST=https://$AWX
 
@@ -62,6 +63,14 @@ if [ ! -d ~/venvs/latest ]; then
   echo "No venv found"
 else
   source ~/venvs/latest/bin/activate
+fi
+
+# check for kube configs and exprot if found
+kubeconfigs=$(find ~/.kube -name 'config-*' -type f 2>/dev/null | tr '\n' ':')
+if [ -z "$kubeconfigs" ]; then
+  echo "No kube configs found"
+else
+  export KUBECONFIG="$kubeconfigs"
 fi
 
 # set editor to yazi opens fils in neovim
