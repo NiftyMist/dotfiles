@@ -21,7 +21,7 @@ vim.keymap.set('n', '<leader>w', ':vsplit<CR>')
 vim.keymap.set('n', '<leader>ww', ':sp<CR>')
 
 -- gitsigns
-vim.keymap.set('n', '<leader>gb', '::Gitsigns toggle_current_line_blame<CR>')
+vim.keymap.set('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<CR>')
 vim.keymap.set('n', '<leader>gp', ':Gitsigns preview_hunk_inline<CR>')
 
 -- fugitive
