@@ -65,3 +65,28 @@ Clone into home directory.
 
 From the root of the repo, execute `stow .` and restart my terminal and/or programs.
 
+# Offline install (air-gapped hosts)
+
+For hosts with no Internet, [`scripts/build-offline-bundle.sh`](scripts/build-offline-bundle.sh)
+builds a self-contained tarball of the shell functions, neovim (Linux binary +
+config + plugins), tmux (config + plugins), and ghostty config.
+
+```sh
+# On an online machine (macOS):
+./scripts/build-offline-bundle.sh                 # -> ~/dotfiles-offline-<timestamp>.tar.gz
+NVIM_ARCH=arm64 ./scripts/build-offline-bundle.sh # for ARM Linux targets (default: x86_64)
+
+# Copy the tarball to the offline host, then:
+tar -xzf dotfiles-offline-*.tar.gz
+./dotfiles-offline/install.sh
+```
+
+Notes:
+- Plugins are pinned to `.config/nvim/nvim-pack-lock.json` and pre-cloned, so
+  neovim never fetches on first launch.
+- Treesitter parsers are arch-specific and **not** bundled; the startup
+  `install()` is stripped and highlighting falls back to vim's regex syntax.
+  To enable treesitter later you need one-shot Internet **and** the
+  `tree-sitter` CLI on PATH, then `:TSInstall <lang>`.
+- `claude-code.nvim` is bundled but needs the `claude` CLI installed separately.
+

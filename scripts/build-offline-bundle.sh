@@ -34,10 +34,13 @@ echo "==> Neovim config"
 mkdir -p "$STAGING/nvim/config"
 rsync -a --exclude='.DS_Store' "$DOTFILES_DIR/.config/nvim/" "$STAGING/nvim/config/"
 
-# Patch init.lua: treesitter parsers can't be cross-compiled cleanly. Empty the
-# ensure_installed list so nvim doesn't try to fetch parsers from GitHub on
-# first launch. Fallback highlighting uses vim's built-in regex syntax.
-perl -i -0pe 's/ensure_installed\s*=\s*\{[^}]*\}(,?)/ensure_installed = {}$1 -- offline: parsers not pre-built/' \
+# Patch init.lua: treesitter parsers can't be cross-compiled cleanly, and the
+# nvim-treesitter `main` branch fetches parser sources from GitHub + compiles
+# them with the `tree-sitter` CLI at startup. Neutralize the install() call so
+# nvim doesn't try to reach the network (or fail for a missing CLI) on first
+# offline launch. Highlighting falls back to vim's built-in regex syntax; the
+# register() + FileType autocmd below it stay and degrade gracefully (pcall).
+perl -i -0pe "s/require\('nvim-treesitter'\)\.install\(\{[^}]*\}\)/-- offline: parsers not pre-built; install() skipped (no network \/ no tree-sitter CLI)/s" \
   "$STAGING/nvim/config/init.lua"
 
 # Download Neovim binary
@@ -183,9 +186,10 @@ Install complete. Final steps:
   2. Open tmux. Plugins are pre-installed; no Internet needed.
 
   3. Open nvim. Plugins load from pack/core/opt; no fetch happens.
-     - Treesitter parsers are NOT pre-built (arch-specific). Syntax falls
-       back to vim's regex highlighting. Run :TSInstall <lang> manually if
-       you have one-shot Internet later.
+     - Treesitter parsers are NOT pre-built (arch-specific) and the startup
+       install() call is stripped, so syntax falls back to vim's regex
+       highlighting. To get treesitter later (needs one-shot Internet AND the
+       'tree-sitter' CLI on PATH): run :TSInstall <lang>.
      - claude-code.nvim is bundled but needs the 'claude' CLI installed
        separately to actually work.
 
