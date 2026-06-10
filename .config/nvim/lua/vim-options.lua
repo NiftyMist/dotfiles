@@ -21,7 +21,7 @@ vim.keymap.set('n', '<leader>w', ':vsplit<CR>')
 vim.keymap.set('n', '<leader>ww', ':sp<CR>')
 
 -- gitsigns
-vim.keymap.set('n', '<leader>gb', '::Gitsigns toggle_current_line_blame<CR>')
+vim.keymap.set('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<CR>')
 vim.keymap.set('n', '<leader>gp', ':Gitsigns preview_hunk_inline<CR>')
 
 -- fugitive
@@ -51,8 +51,17 @@ vim.filetype.add({
   extension = {
     tfvars = "terraform",
   },
+  pattern = {
+    [".*/roles/.*/tasks/.*%.ya?ml"] = "yaml.ansible",
+    [".*/roles/.*/handlers/.*%.ya?ml"] = "yaml.ansible",
+    [".*/roles/.*/defaults/.*%.ya?ml"] = "yaml.ansible",
+    [".*/roles/.*/vars/.*%.ya?ml"] = "yaml.ansible",
+    [".*/roles/.*/meta/.*%.ya?ml"] = "yaml.ansible",
+  },
 })
 
 -- fugitive-gitlab
 vim.g.fugitive_gitlab_domains = { 'https://git.rinet.io' }
 
+-- Update plugins with vim pack
+vim.keymap.set("n", "<leader>U", ':lua vim.pack.update()<CR>')

@@ -37,6 +37,7 @@ if [ ! -f ~/.gitlab_access_token ]; then
   echo "Please add gitlab access token to $HOME/.gitlab_access_token"
 else
   export GITLAB_ACCESS_TOKEN=$(cat $HOME/.gitlab_access_token)
+  export GITLAB_TOKEN=$(cat $HOME/.gitlab_access_token_glab)
 fi
 
 # molecule enable colors for tmux
@@ -65,7 +66,7 @@ else
   source ~/venvs/latest/bin/activate
 fi
 
-# check for kube configs and exprot if found
+# check for kube configs and export if found
 kubeconfigs=$(find ~/.kube -name 'config-*' -type f 2>/dev/null | tr '\n' ':')
 if [ -z "$kubeconfigs" ]; then
   echo "No kube configs found"
@@ -87,3 +88,4 @@ eval "$(starship init zsh)"
 
 # include my bash libraries
 source ~/dotfiles/lib/functions.sh
+export PATH="$HOME/.local/bin:$PATH"

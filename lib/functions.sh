@@ -1,4 +1,4 @@
-# bash library — must be sourced
+# Shell functions library — must be sourced. Works in both zsh and bash.
 (return 0 2>/dev/null) || {
   echo "ERROR: This file must be sourced, not executed"
   exit 1
@@ -13,13 +13,6 @@ roles() {
   fi
 }
 
-# Completion for roles()
-_roles() {
-  local base_dir=~/git/ansible/roles
-  _files -W "$base_dir" -/
-}
-compdef _roles roles
-
 plays() {
   local base_dir=~/git/ansible/plays
   if [[ -z "$1" ]]; then
@@ -28,13 +21,6 @@ plays() {
     cd "$base_dir/$1" || echo "Play '$1' not found in $base_dir"
   fi
 }
-
-# Completion for plays()
-_plays() {
-  local base_dir=~/git/ansible/plays
-  _files -W "$base_dir" -/
-}
-compdef _plays plays
 
 inv() {
   local base_dir=~/git/ansible/inventories
@@ -45,24 +31,38 @@ inv() {
   fi
 }
 
-# Completion for inv()
-_inv() {
-  local base_dir=~/git/ansible/inventories
-  _files -W "$base_dir" -/
-}
-compdef _inv inv
-
 daily_note() {
-  DATE=`date +"%Y-%m-%d"`
-  OBSIDIAN="$HOME/obsidian/journal"
-  DAILY_NOTE="work-notes/$DATE.md"
-  cd $OBSIDIAN
-  nvim $DAILY_NOTE
+  local date_str
+  date_str=$(date +"%Y-%m-%d")
+  local obsidian="$HOME/obsidian/journal"
+  cd "$obsidian" && nvim "work-notes/${date_str}.md"
 }
 
 todo() {
-  OBSIDIAN="$HOME/obsidian/journal"
-  TODO_NOTE="TODO.md"
-  cd $OBSIDIAN
-  nvim $TODO_NOTE
+  local obsidian="$HOME/obsidian/journal"
+  cd "$obsidian" && nvim TODO.md
 }
+
+# Shell-specific tab completion
+if [[ -n "$ZSH_VERSION" ]]; then
+  _roles() { _files -W ~/git/ansible/roles -/; }
+  _plays() { _files -W ~/git/ansible/plays -/; }
+  _inv()   { _files -W ~/git/ansible/inventories -/; }
+  compdef _roles roles
+  compdef _plays plays
+  compdef _inv inv
+elif [[ -n "$BASH_VERSION" ]]; then
+  _df_ansible_dir_complete() {
+    local base_dir="$1"
+    local cur="${COMP_WORDS[COMP_CWORD]}"
+    if [[ -d "$base_dir" ]]; then
+      mapfile -t COMPREPLY < <(cd "$base_dir" && compgen -d -- "$cur")
+    fi
+  }
+  _df_roles_complete() { _df_ansible_dir_complete ~/git/ansible/roles; }
+  _df_plays_complete() { _df_ansible_dir_complete ~/git/ansible/plays; }
+  _df_inv_complete()   { _df_ansible_dir_complete ~/git/ansible/inventories; }
+  complete -F _df_roles_complete roles
+  complete -F _df_plays_complete plays
+  complete -F _df_inv_complete inv
+fi
