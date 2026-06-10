@@ -63,5 +63,5 @@ Clone into home directory.
 
 # Using stow  
 
-From the root of the repo, execut `stow .` and restart my terminal and/or programs.
+From the root of the repo, execute `stow .` and restart my terminal and/or programs.
 
