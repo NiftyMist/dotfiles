@@ -1,7 +1,7 @@
 {
   "plugins": {
     "ansible-vim": {
-      "rev": "024274576de77db723eb1f0478da046fc5f1507f",
+      "rev": "6c42a448e30bc48ae98792bce38970148b0e3c9d",
       "src": "https://github.com/pearofducks/ansible-vim"
     },
     "claude-code.nvim": {
@@ -13,19 +13,19 @@
       "src": "https://github.com/shumphrey/fugitive-gitlab.vim"
     },
     "gitsigns.nvim": {
-      "rev": "8d82c240f190fc33723d48c308ccc1ed8baad69d",
+      "rev": "25050e4ed39e628282831d4cbecb1850454ce915",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "lualine.nvim": {
-      "rev": "a905eeebc4e63fdc48b5135d3bf8aea5618fb21c",
+      "rev": "221ce6b2d999187044529f49da6554a92f740a96",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "mason.nvim": {
-      "rev": "b03fb0f20bc1d43daf558cda981a2be22e73ac42",
+      "rev": "16ba83bfc8a25f52bb545134f5bee082b195c460",
       "src": "https://github.com/williamboman/mason.nvim"
     },
     "nvim": {
-      "rev": "426dbebe06b5c69fd846ceb17b42e12f890aedf1",
+      "rev": "0303a7208dba448c459767486a38a6ec05c4216b",
       "src": "https://github.com/catppuccin/nvim"
     },
     "nvim-ansible": {
@@ -37,7 +37,7 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-web-devicons": {
-      "rev": "c72328a5494b4502947a022fe69c0c47e53b6aa6",
+      "rev": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "plenary.nvim": {
@@ -45,7 +45,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "startup.nvim": {
-      "rev": "9ca3b9a55f2f2196ef90b39a52029b46fdde5226",
+      "rev": "bd835f4fd95dbb30cb4607a8d7a090216fb6d035",
       "src": "https://github.com/startup-nvim/startup.nvim"
     },
     "telescope-file-browser.nvim": {
@@ -53,7 +53,7 @@
       "src": "https://github.com/nvim-telescope/telescope-file-browser.nvim"
     },
     "telescope.nvim": {
-      "rev": "f7c673b8e46e8f233ff581d3624a517d33a7e264",
+      "rev": "7d324792b7943e4aa16ad007212e6acc6f9fe335",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
     "vim-fugitive": {
