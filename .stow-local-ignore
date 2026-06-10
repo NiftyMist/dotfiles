@@ -2,3 +2,5 @@ README.md
 .git
 .gitignore
 .stow-local-ignore
+Brewfile
+Brewfile.bak

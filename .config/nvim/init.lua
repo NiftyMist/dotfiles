@@ -49,18 +49,41 @@ require("telescope").setup({
 })
 
 -- The module is now just 'nvim-treesitter' not 'nvim-treesitter.configs'
-require('nvim-treesitter').setup({
-  ensure_installed = {
-    "lua",
-    "bash",
-    "python",
-    "yaml",
-    "hcl",
-    "jinja",
-    "nginx",
-    "tmux",
-    "markdown",
-  },
+-- NOTE: on the `main` branch, setup() does NOT take `ensure_installed` and
+-- does NOT enable highlighting. Parsers are installed via install() (below,
+-- compiled with the `tree-sitter` CLI -- `brew install tree-sitter-cli`),
+-- and highlighting must be started per-buffer (autocmd below).
+require('nvim-treesitter').setup()
+
+-- Install/compile parsers. install() only builds what's missing, so this is
+-- a no-op on startup once they're present.
+require('nvim-treesitter').install({
+  "lua",
+  "bash",
+  "python",
+  "yaml",
+  "hcl",
+  "jinja",
+  "jinja_inline",
+  "nginx",
+  "tmux",
+  "markdown",
+  "markdown_inline",
+})
+
+-- Ansible files have filetype `ansible`/`yaml.ansible` but there is no
+-- "ansible" treesitter parser -- they should be parsed as YAML.
+vim.treesitter.language.register("yaml", { "ansible" })
+
+-- Enable treesitter highlighting per-buffer (required on the `main` branch).
+-- Falls back silently to legacy `:syntax` for filetypes with no parser.
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(ev)
+    local ft = vim.bo[ev.buf].filetype
+    -- handle compound filetypes like "yaml.ansible" -> base "yaml"
+    local lang = vim.treesitter.language.get_lang(ft) or ft:gsub("%..*", "")
+    pcall(vim.treesitter.start, ev.buf, lang)
+  end,
 })
 
 require("claude-code").setup({
