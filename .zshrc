@@ -37,7 +37,7 @@ if [ ! -f ~/.gitlab_access_token ]; then
   echo "Please add gitlab access token to $HOME/.gitlab_access_token"
 else
   export GITLAB_ACCESS_TOKEN=$(cat $HOME/.gitlab_access_token)
-  export GITLAB_TOKEN=$(cat $HOME/.gitlab_access_token_glab)
+  export GITLAB_TOKEN=$(cat $HOME/.gitlab_access_token)
 fi
 
 # molecule enable colors for tmux
