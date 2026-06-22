@@ -28,7 +28,7 @@ $kubernetes\
 $line_break\
 $character"""
 
-palette = 'catppuccin_frappe'
+palette = 'catppuccin_mocha'
 
 [os]
 disabled = false

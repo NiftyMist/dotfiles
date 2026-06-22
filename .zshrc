@@ -78,7 +78,7 @@ fi
 export EDITOR=nvim
 
 # bat theme
-export BAT_THEME="Catppuccin Macchiato"
+export BAT_THEME="Catppuccin Mocha"
 alias cat="bat"
 
 # gitlab commit signing
