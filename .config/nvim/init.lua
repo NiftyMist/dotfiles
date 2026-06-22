@@ -21,7 +21,7 @@ vim.pack.add({
   "https://github.com/greggh/claude-code.nvim"
 })
 -- Colorscheme
-vim.cmd.colorscheme("catppuccin-macchiato")
+vim.cmd.colorscheme("catppuccin-mocha")
 
 -- Plugin configs
 require("gitsigns").setup()
