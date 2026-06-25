@@ -66,3 +66,8 @@ elif [[ -n "$BASH_VERSION" ]]; then
   complete -F _df_plays_complete plays
   complete -F _df_inv_complete inv
 fi
+
+dotfiles() {
+  local dotfiles="$HOME/dotfiles"
+  cd "$dotfiles"
+}
