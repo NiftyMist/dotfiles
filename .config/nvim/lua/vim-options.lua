@@ -26,7 +26,7 @@ vim.keymap.set('n', '<leader>gp', ':Gitsigns preview_hunk_inline<CR>')
 
 -- fugitive
 -- shortcut to open git status buffer
-vim.keymap.set('n', '<leader>g', ':G<CR>')
+vim.keymap.set('n', '<leader>g', ':G | only<CR>')
 -- shortcut to do GitBrowse command
 vim.keymap.set('n', '<leader>b', ':GBrowse<CR>')
 -- shortcut to open commit buffer
