@@ -170,7 +170,9 @@ min_time_to_notify = 45000
 
 [kubernetes]
 disabled = false
-format = '[$symbol$context( \($namespace\))]($style) '
+symbol = "☸ "
+style = "fg:crust bg:teal"
+format = '[](fg:teal)[ $symbol$context( \($namespace\)) ]($style)[](fg:teal) '
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
@@ -283,3 +285,4 @@ surface0 = "#363a4f"
 base = "#24273a"
 mantle = "#1e2030"
 crust = "#181926"
+
