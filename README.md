@@ -14,7 +14,7 @@ Clone into home directory.
     (`~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh`)
   - [`starship`](https://starship.rs/) prompt
 - nerd fonts (installed via the `Brewfile`)
-  - `Hack Nerd Font` (ghostty) and `JetBrainsMonoNL Nerd Font` (alacritty)
+  - `Hack Nerd Font` (ghostty)
 - `stow`
 - homebrew — all packages are declared in the [`Brewfile`](Brewfile) and
   managed by [`scripts/brew-sync.sh`](scripts/brew-sync.sh):
@@ -31,12 +31,11 @@ Clone into home directory.
 
 # My settings
 - themes (mostly Catppuccin):
-  - ghostty: Catppuccin Frappe (`Hack Nerd Font Propo`, size 17)
-  - alacritty: default colors (`JetBrainsMonoNL Nerd Font`)
+  - ghostty: Catppuccin Mocha (`Hack Nerd Font Propo`, size 17)
   - nvim: `catppuccin/nvim` (`catppuccin-macchiato`)
-  - tmux: `catppuccin/tmux` (frappe)
-  - starship: `catppuccin_frappe` palette
-  - bat: Catppuccin Macchiato
+  - tmux: `catppuccin/tmux` (mocha)
+  - starship: `catppuccin_mocha` palette
+  - bat: Catppuccin Mocha
   - zsh-syntax-highlighting: Catppuccin Mocha
   - yazi: gruvbox-dark `ya pack -a bennyyip/gruvbox-dark`
 - nvim plugins (see `.config/nvim/init.lua`):
