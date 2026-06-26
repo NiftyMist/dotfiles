@@ -37,7 +37,7 @@ Clone into home directory.
   - starship: `catppuccin_mocha` palette
   - bat: Catppuccin Mocha
   - zsh-syntax-highlighting: Catppuccin Mocha
-  - yazi: gruvbox-dark `ya pack -a bennyyip/gruvbox-dark`
+  - yazi: Catppuccin Mocha Green
 - nvim plugins (see `.config/nvim/init.lua`):
   - catppuccin/nvim (colorscheme)
   - plenary.nvim
