@@ -58,7 +58,6 @@ brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 
 # ---- Casks ----
-cask "alacritty"
 cask "caffeine"
 cask "claude"
 cask "claude-code"
