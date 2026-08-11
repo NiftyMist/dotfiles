@@ -56,6 +56,8 @@ brew "yq"
 brew "zoxide"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
+brew "anomalyco/tap/opencode"
+brew "git-lfs"
 
 # ---- Casks ----
 cask "caffeine"

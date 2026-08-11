@@ -13,7 +13,7 @@
       "src": "https://github.com/shumphrey/fugitive-gitlab.vim"
     },
     "gitsigns.nvim": {
-      "rev": "eb60cc7b94c46005237fd34170d76f3a089a90aa",
+      "rev": "5be654f2232c10ddcad19c1607a67b6b4b78fc29",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "lualine.nvim": {
@@ -25,7 +25,7 @@
       "src": "https://github.com/williamboman/mason.nvim"
     },
     "nvim": {
-      "rev": "05e8787020dcfdb937bf2ff23855ea2415b4e072",
+      "rev": "edefef779ab08ce1a4a404713e3012b0d202bd35",
       "src": "https://github.com/catppuccin/nvim"
     },
     "nvim-ansible": {
@@ -33,11 +33,11 @@
       "src": "https://github.com/mfussenegger/nvim-ansible"
     },
     "nvim-treesitter": {
-      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "rev": "c9f9ed6c1892f629ea399f4ee7905f2686fa13f2",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-web-devicons": {
-      "rev": "09d1324e264c6950262dbe02a9bce2933a6800db",
+      "rev": "2ae6958df7ced50baac5035cec0c15799eedfbf7",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "plenary.nvim": {
@@ -63,6 +63,10 @@
     "vim-surround": {
       "rev": "3d188ed2113431cf8dac77be61b842acb64433d9",
       "src": "https://github.com/tpope/vim-surround"
+    },
+    "vim-tmux": {
+      "rev": "cfe76281efc29890548cf9eedd42ad51c7a1faf0",
+      "src": "https://github.com/tmux-plugins/vim-tmux"
     },
     "vim-tmux-navigator": {
       "rev": "e41c431a0c7b7388ae7ba341f01a0d217eb3a432",

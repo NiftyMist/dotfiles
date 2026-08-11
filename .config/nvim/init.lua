@@ -18,7 +18,7 @@ vim.pack.add({
   "https://github.com/mfussenegger/nvim-ansible",
   "https://github.com/williamboman/mason.nvim",
   "https://github.com/startup-nvim/startup.nvim",
-  "https://github.com/greggh/claude-code.nvim"
+  "https://github.com/tmux-plugins/vim-tmux"
 })
 -- Colorscheme
 vim.cmd.colorscheme("catppuccin-mocha")
@@ -66,7 +66,6 @@ require('nvim-treesitter').install({
   "jinja",
   "jinja_inline",
   "nginx",
-  "tmux",
   "markdown",
   "markdown_inline",
 })
@@ -84,44 +83,6 @@ vim.api.nvim_create_autocmd("FileType", {
     local lang = vim.treesitter.language.get_lang(ft) or ft:gsub("%..*", "")
     pcall(vim.treesitter.start, ev.buf, lang)
   end,
-})
-
-require("claude-code").setup({
-  window = {
-    split_ratio = 0.3,
-    position = "float",
-    enter_insert = true,
-    hide_numbers = true,
-    hide_signcolumn = true,
-    float = {
-      width = "80%",
-      height = "80%",
-      row = "center",
-      col = "center",
-      relative = "editor",
-      border = "rounded",
-    },
-  },
-  refresh = {
-    enable = true,
-    updatetime = 100,
-    timer_interval = 1000,
-    show_notifications = true,
-  },
-  git = { use_git_root = true },
-  command = "claude",
-  keymaps = {
-    toggle = {
-      normal = "<leader>cc",
-      terminal = "<leader>cc",
-      variants = {
-        continue = "<leader>cC",
-        verbose = "<leader>cV",
-      },
-    },
-    window_navigation = true,
-    scrolling = true,
-  },
 })
 
 -- Telescope keymaps
